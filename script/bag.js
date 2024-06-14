@@ -1,0 +1,1 @@
+const cart = document.querySelector(".bag-page")
