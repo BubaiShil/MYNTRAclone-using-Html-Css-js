@@ -34,6 +34,18 @@ function displayBagItems() {
     containerElement.innerHTML = innerHTML;
 }
 
+
+function removeFromBag(id){
+  console.log("doing...");
+  bagitems=bagitems.filter(bagItemid => bagItemid != id)
+  localStorage.setItem('bagItems',JSON.stringify(bagitems))
+  loadBagItemObjects()
+  numberOfItem()
+  displayBagItems()
+  console.log("done");
+}
+
+
 function generateItemHTML(bagItem) {
     return `<div class="bag-item-container">
       <div class="item-left-part">
@@ -45,7 +57,7 @@ function generateItemHTML(bagItem) {
         <div class="price-container">
           <span class="current-price">Rs ${bagItem.current_price}</span>
           <span class="original-price">Rs ${bagItem.original_price}</span>
-          <span class="discount-percentage">(${bagItem.discount_percentage}% OFF)</span>
+          <span class="discount-percentage">(${bagItem.discount}% OFF)</span>
         </div>
         <div class="return-period">
           <span class="return-period-days">${bagItem.return_period} days</span> return available
