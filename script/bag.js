@@ -80,7 +80,7 @@ function displayBagItems() {
 function removeFromBag(id) {
   console.log("doing...");
   bagitems = bagitems.filter(bagItemid => bagItemid != id)
-  localStorage.setItem('bagItems', JSON.stringify(bagitems))
+  localStorage.setItem('bagitems', JSON.stringify(bagitems))
   loadBagItemObjects()
   numberOfItem()
   displayBagItems()
